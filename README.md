@@ -128,11 +128,11 @@ Write Pinterest pin copy and Instagram ad variants for a printable homeschool ch
 
 ## Magic Lister Packs
 
-The Magic Lister pack tools are the MCP equivalent of running ZIP-generating Magic Lister workflows inside EverAlice Studio.
+The Magic Lister pack tools are the MCP equivalent of running ZIP-generating Magic Lister seller workflows inside EverAlice Studio.
 
 ### `magic_lister_pack`
 
-Use this for one product. It generates listing copy, a hero product image, lifestyle mockups, and a ZIP download link.
+Use this for one product. It generates listing copy, a hero product image, exactly 4 lifestyle mockups, and a ZIP download link.
 
 It accepts:
 
@@ -140,27 +140,31 @@ It accepts:
 - `platform` - `etsy`, `shopify`, `gumroad`, `creative-market`, `amazon-kdp`, or `payhip`.
 - `brand_name` - Optional brand/shop name.
 - `keywords_to_include` - Optional SEO seed keywords.
-- `mockup_count` - Number of lifestyle mockups to generate, from 0 to 6.
+- `mockup_count` - Deprecated for the single pack; accepted for compatibility but the pack currently delivers exactly 4 mockups.
 - `aspect` - `square`, `portrait`, or `landscape`.
 
 It returns:
 
 - `listing` - Marketplace-ready title, tags, description, bullet points, target audience, and category.
 - `hero_image_base64` - Generated hero product image.
-- `mockup_urls` - Signed URLs for generated mockups.
+- `mockup_images_base64` - Generated lifestyle mockup images.
 - `zip_url` - Signed ZIP download URL, valid for 7 days.
+- `zip_expires_in_seconds` - Signed ZIP URL lifetime.
 - `credits_used` - Total credits used for the run.
 
 ## What's in the ZIP?
 
-Magic Lister pack tools return a signed `zip_url` so MCP clients can hand users a single download link. A pack ZIP is designed to include the generated listing assets for the run:
+Magic Lister pack tools return a signed `zip_url` so MCP clients can hand users a single download link. The current MCP ZIP is a **Seller Asset Pack** designed to include the generated listing assets for the run:
 
-- Marketplace listing copy, including title, tags, description, bullet points, target audience, and suggested category.
-- A generated hero product image for the listing.
-- Generated lifestyle mockup images, based on the requested `mockup_count`.
-- Supporting metadata such as credits used and pack details.
+- `listing.json` with structured title, tags, description, bullet points, target audience, and suggested category.
+- `listing.txt` with human-readable, copy-paste-ready listing copy.
+- `hero.png` as the primary listing image.
+- `mockups/` containing generated lifestyle mockup images.
+- `README.txt` with pack details.
 
 Bundle packs use the same idea for one multi-product bundle. Bulk packs organize each product into its own subfolder and return one master ZIP for the batch.
+
+Buyer-facing print-ratio files such as JPG/PNG/PDF size variants and welcome PDFs are part of the broader EverAlice product roadmap, but they are not included in the current MCP Seller Asset Pack.
 
 ### `magic_lister_bundle_pack`
 
