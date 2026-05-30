@@ -1,6 +1,6 @@
 name: everalice-studio
 displayName: EverAlice Studio
-description: AI-powered Etsy listing workflow tools for listing copy, images, mockup briefs, KDP copy, planner outlines, book outlines, and ad copy.
+description: AI-powered Etsy listing workflow tools for listing copy, images, signed ZIP listing packs, mockup briefs, KDP copy, planner outlines, book outlines, and ad copy.
 homepage: https://everalice.studio/developers
 transport:
   type: streamable-http

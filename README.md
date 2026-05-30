@@ -2,7 +2,9 @@
 
 AI-powered listing and creative workflow tools for Etsy sellers, digital product creators, and print-on-demand shops.
 
-EverAlice Studio exposes a hosted MCP server with 14 tools for listing copy, product art, mockup planning, KDP copy, planner outlines, book outlines, image upscaling, background removal, and ad copy.
+EverAlice Studio exposes a hosted MCP server with 15 tools for listing copy, full listing packs with ZIP download links, product art, mockup planning, KDP copy, planner outlines, book outlines, image upscaling, background removal, and ad copy.
+
+The headline tool is `magic_lister_pack`: it runs the Magic Lister workflow server-side, creates marketplace listing copy, generates a hero product image and lifestyle mockups, packages the result into a ZIP, and returns signed download URLs that an AI assistant can hand back to the user.
 
 ## MCP Endpoint
 
@@ -16,10 +18,11 @@ Protocol: MCP `2025-06-18`
 
 ## Tools
 
-- `magic_lister_single` - Generate a platform-optimized listing for one product, with delivery ZIP download support when available.
-- `magic_lister_bundle` - Generate a bundle listing, with delivery ZIP download support when available.
-- `magic_lister_bulk` - Generate up to 10 listing sets in one call, with delivery ZIP download support when available.
+- `magic_lister_single` - Generate platform-optimized listing copy for one product.
+- `magic_lister_bundle` - Generate listing copy for a bundle of products.
+- `magic_lister_bulk` - Generate up to 10 listing copy sets in one call.
 - `ai_copywriter` - Generate short-form ecommerce copy.
+- `magic_lister_pack` - Generate listing copy, a hero product image, lifestyle mockups, and a signed ZIP download URL.
 - `generate_image` - Generate product art, posters, clipart, wallpapers, or listing photos.
 - `upscale_image` - Upscale an existing image to a sharper print-ready PNG.
 - `remove_background` - Remove an image background and return a transparent PNG.
@@ -62,11 +65,35 @@ codex mcp add everalice-studio \
 
 Set `EVERALICE_MCP_API_KEY` to your EverAlice API key before starting Codex.
 
-## Notes
+## Magic Lister Pack
 
-The MCP Magic Lister tools generate structured marketplace listing output and can surface delivery package download links when the generated ZIP workflow is available for that product. For standalone image generation, mockup concepts, upscaling, and background removal, use the dedicated MCP tools such as `generate_image`, `generate_mockup_concept`, `upscale_image`, and `remove_background`.
+`magic_lister_pack` is the MCP equivalent of running the full Magic Lister workflow inside EverAlice Studio.
 
-The full EverAlice Studio web app includes additional end-to-end workflows for mockups, print exports, and delivery ZIP packages.
+It accepts:
+
+- `product_description` - Plain-English product brief.
+- `platform` - `etsy`, `shopify`, `gumroad`, `creative-market`, `amazon-kdp`, or `payhip`.
+- `brand_name` - Optional brand/shop name.
+- `keywords_to_include` - Optional SEO seed keywords.
+- `mockup_count` - Number of lifestyle mockups to generate, from 0 to 6.
+- `aspect` - `square`, `portrait`, or `landscape`.
+
+It returns:
+
+- `listing` - Marketplace-ready title, tags, description, bullet points, target audience, and category.
+- `hero_image_base64` - Generated hero product image.
+- `mockup_urls` - Signed URLs for generated mockups.
+- `zip_url` - Signed ZIP download URL, valid for 7 days.
+- `credits_used` - Total credits used for the run.
+
+## Why Use This MCP Server?
+
+- Etsy-tuned SEO for marketplace titles, tags, descriptions, and category fit.
+- Brand consistency through EverAlice Studio account context where available.
+- One EverAlice credit pool across Claude, Codex, ChatGPT, n8n, and other MCP clients.
+- Full pack delivery through signed URLs, so AI assistants can return a clickable ZIP link instead of just text.
+
+For standalone image generation, mockup concepts, upscaling, and background removal, use the dedicated MCP tools such as `generate_image`, `generate_mockup_concept`, `upscale_image`, and `remove_background`.
 
 ## Documentation
 
