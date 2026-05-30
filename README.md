@@ -4,6 +4,7 @@
 [![Developer Docs](https://img.shields.io/badge/Docs-MCP%20Developers-blue)](https://everalice.studio/developers)
 [![MCP Manifest](https://img.shields.io/badge/MCP-Manifest-green)](https://everalice.studio/.well-known/mcp.json)
 [![Transport](https://img.shields.io/badge/Transport-Streamable%20HTTP-orange)](#mcp-endpoint)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 AI-powered listing and creative workflow tools for Etsy sellers, digital product creators, and print-on-demand shops.
 
