@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.Pixel-Aly/EverAlice-AI-MCP",
   "title": "EverAlice Studio",
-  "description": "AI Etsy listing workflow: listings, images, mockups, KDP copy, planner outlines & ad copy for sellers.",
-  "version": "1.0.2",
+  "description": "AI listing workflow for Etsy sellers: listings, images, mockups, KDP copy & ad copy. 14 tools.",
+  "version": "1.0.3",
   "websiteUrl": "https://everalice.studio/developers",
   "repository": {
     "url": "https://github.com/Pixel-Aly/EverAlice-AI-MCP",
