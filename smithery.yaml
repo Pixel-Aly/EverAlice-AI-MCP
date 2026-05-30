@@ -1,0 +1,10 @@
+name: everalice-studio
+displayName: EverAlice Studio
+description: AI-powered Etsy listing workflow tools for listing copy, images, mockup briefs, KDP copy, planner outlines, book outlines, and ad copy.
+homepage: https://everalice.studio/developers
+transport:
+  type: streamable-http
+  url: https://kfdadgtwmcmgehstagbe.supabase.co/functions/v1/mcp-server
+auth:
+  type: bearer
+  env: EVERALICE_MCP_API_KEY
