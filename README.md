@@ -7,7 +7,7 @@
 
 AI-powered listing and creative workflow tools for Etsy sellers, digital product creators, and print-on-demand shops.
 
-EverAlice Studio exposes a hosted MCP server with 15 tools for listing copy, full listing packs with ZIP download links, product art, mockup planning, KDP copy, planner outlines, book outlines, image upscaling, background removal, and ad copy.
+EverAlice Studio exposes a hosted MCP server with 17 tools for listing copy, full listing packs with ZIP download links, bundle packs, bulk pack generation, product art, mockup planning, KDP copy, planner outlines, book outlines, image upscaling, background removal, and ad copy.
 
 The headline tool is `magic_lister_pack`: it runs the Magic Lister workflow server-side, creates marketplace listing copy, generates a hero product image and lifestyle mockups, packages the result into a ZIP, and returns signed download URLs that an AI assistant can hand back to the user.
 
@@ -52,6 +52,8 @@ Protocol: MCP `2025-06-18`
 - `magic_lister_bulk` - Generate up to 10 listing copy sets in one call.
 - `ai_copywriter` - Generate short-form ecommerce copy.
 - `magic_lister_pack` - Generate listing copy, a hero product image, lifestyle mockups, and a signed ZIP download URL.
+- `magic_lister_bundle_pack` - Generate bundle listing copy, a bundle hero image, lifestyle mockups, and a signed ZIP download URL.
+- `magic_lister_bulk_pack` - Generate full listing packs for up to 5 products and return one signed master ZIP download URL.
 - `generate_image` - Generate product art, posters, clipart, wallpapers, or listing photos.
 - `upscale_image` - Upscale an existing image to a sharper print-ready PNG.
 - `remove_background` - Remove an image background and return a transparent PNG.
@@ -123,9 +125,13 @@ Create three lifestyle mockup concepts for a minimalist kitchen wall art printab
 Write Pinterest pin copy and Instagram ad variants for a printable homeschool chore chart bundle.
 ```
 
-## Magic Lister Pack
+## Magic Lister Packs
 
-`magic_lister_pack` is the MCP equivalent of running the full Magic Lister workflow inside EverAlice Studio.
+The Magic Lister pack tools are the MCP equivalent of running ZIP-generating Magic Lister workflows inside EverAlice Studio.
+
+### `magic_lister_pack`
+
+Use this for one product. It generates listing copy, a hero product image, lifestyle mockups, and a ZIP download link.
 
 It accepts:
 
@@ -144,12 +150,21 @@ It returns:
 - `zip_url` - Signed ZIP download URL, valid for 7 days.
 - `credits_used` - Total credits used for the run.
 
+### `magic_lister_bundle_pack`
+
+Use this for a multi-product bundle sold as one listing. It generates bundle listing copy, a hero image showing the bundle, lifestyle mockups, and a signed ZIP download URL.
+
+### `magic_lister_bulk_pack`
+
+Use this for batch-launching up to 5 products at once. Each product gets listing copy, a hero image, and mockups organized into subfolders, then the full batch is delivered as one signed master ZIP download URL.
+
 ## Why Use This MCP Server?
 
 - Etsy-tuned SEO for marketplace titles, tags, descriptions, and category fit.
 - Brand consistency through EverAlice Studio account context where available.
 - One EverAlice credit pool across Claude, Codex, ChatGPT, n8n, and other MCP clients.
 - Full pack delivery through signed URLs, so AI assistants can return a clickable ZIP link instead of just text.
+- Bundle and bulk pack tools for sellers launching collections, product lines, or multi-SKU drops.
 - Purpose-built digital product workflows for Etsy listing generation, AI mockups, printable products, Amazon KDP books, planners, journals, ads, and ecommerce copy.
 
 For standalone image generation, mockup concepts, upscaling, and background removal, use the dedicated MCP tools such as `generate_image`, `generate_mockup_concept`, `upscale_image`, and `remove_background`.
@@ -159,6 +174,8 @@ For standalone image generation, mockup concepts, upscaling, and background remo
 - Generate a complete Etsy listing from a product idea.
 - Create SEO titles, tags, descriptions, bullets, categories, and target audience copy.
 - Generate a full Magic Lister pack with product images, mockups, and a signed ZIP download link.
+- Generate a bundle pack for multi-product Etsy listings.
+- Generate a bulk master ZIP for launching several related products at once.
 - Brainstorm new printable products, planner concepts, book outlines, greeting cards, and KDP cover copy.
 - Create Pinterest pin copy, Instagram/Facebook ad variants, and short promotional copy.
 - Upscale product artwork or remove backgrounds for cleaner listing images.
