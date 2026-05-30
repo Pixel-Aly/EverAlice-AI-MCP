@@ -150,6 +150,17 @@ It returns:
 - `zip_url` - Signed ZIP download URL, valid for 7 days.
 - `credits_used` - Total credits used for the run.
 
+## What's in the ZIP?
+
+Magic Lister pack tools return a signed `zip_url` so MCP clients can hand users a single download link. A pack ZIP is designed to include the generated listing assets for the run:
+
+- Marketplace listing copy, including title, tags, description, bullet points, target audience, and suggested category.
+- A generated hero product image for the listing.
+- Generated lifestyle mockup images, based on the requested `mockup_count`.
+- Supporting metadata such as credits used and pack details.
+
+Bundle packs use the same idea for one multi-product bundle. Bulk packs organize each product into its own subfolder and return one master ZIP for the batch.
+
 ### `magic_lister_bundle_pack`
 
 Use this for a multi-product bundle sold as one listing. It generates bundle listing copy, a hero image showing the bundle, lifestyle mockups, and a signed ZIP download URL.
