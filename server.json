@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.Pixel-Aly/EverAlice-AI-MCP",
   "title": "EverAlice Studio",
-  "description": "AI-powered Etsy listing workflow for digital product and printable sellers. 14 tools: generate complete marketplace listings (Etsy/Shopify/Gumroad/KDP/Payhip), AI product images, mockup scene concepts, KDP cover copy, planner outlines, book outlines, greeting card copy, and Pinterest/Instagram ad copy. Streamable HTTP transport.",
+  "description": "AI Etsy listing workflow: listings, images, mockups, KDP copy, planner outlines & ad copy for sellers.",
   "version": "1.0.2",
   "websiteUrl": "https://everalice.studio/developers",
   "repository": {
