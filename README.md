@@ -1,5 +1,10 @@
 # EverAlice Studio MCP Server
 
+[![Website](https://img.shields.io/badge/Website-everalice.studio-purple)](https://everalice.studio)
+[![Developer Docs](https://img.shields.io/badge/Docs-MCP%20Developers-blue)](https://everalice.studio/developers)
+[![MCP Manifest](https://img.shields.io/badge/MCP-Manifest-green)](https://everalice.studio/.well-known/mcp.json)
+[![Transport](https://img.shields.io/badge/Transport-Streamable%20HTTP-orange)](#mcp-endpoint)
+
 AI-powered listing and creative workflow tools for Etsy sellers, digital product creators, and print-on-demand shops.
 
 EverAlice Studio exposes a hosted MCP server with 15 tools for listing copy, full listing packs with ZIP download links, product art, mockup planning, KDP copy, planner outlines, book outlines, image upscaling, background removal, and ad copy.
@@ -7,6 +12,13 @@ EverAlice Studio exposes a hosted MCP server with 15 tools for listing copy, ful
 The headline tool is `magic_lister_pack`: it runs the Magic Lister workflow server-side, creates marketplace listing copy, generates a hero product image and lifestyle mockups, packages the result into a ZIP, and returns signed download URLs that an AI assistant can hand back to the user.
 
 Use EverAlice from Claude Desktop, Codex, ChatGPT-compatible MCP clients, n8n workflows, and other automation tools to create Etsy listings, digital download products, KDP assets, printable wall art, product mockups, Pinterest ad copy, and SEO-friendly marketplace content.
+
+## Quick Links
+
+- Website: [everalice.studio](https://everalice.studio)
+- Developer docs: [everalice.studio/developers](https://everalice.studio/developers)
+- MCP manifest: [everalice.studio/.well-known/mcp.json](https://everalice.studio/.well-known/mcp.json)
+- Account settings and API keys: [everalice.studio/settings](https://everalice.studio/settings)
 
 ## What Is EverAlice Studio?
 
@@ -90,6 +102,26 @@ codex mcp add everalice-studio \
 
 Set `EVERALICE_MCP_API_KEY` to your EverAlice API key before starting Codex.
 
+## Example Prompts
+
+Once connected to an MCP client, try prompts like:
+
+```text
+Use EverAlice to create a full Magic Lister pack for a printable ADHD wall art poster. Make 4 mockups and return the ZIP link.
+```
+
+```text
+Generate an Etsy listing for a cozy fall digital planner. Include SEO title, tags, description, bullets, target audience, and category.
+```
+
+```text
+Create three lifestyle mockup concepts for a minimalist kitchen wall art printable.
+```
+
+```text
+Write Pinterest pin copy and Instagram ad variants for a printable homeschool chore chart bundle.
+```
+
 ## Magic Lister Pack
 
 `magic_lister_pack` is the MCP equivalent of running the full Magic Lister workflow inside EverAlice Studio.
@@ -129,6 +161,24 @@ For standalone image generation, mockup concepts, upscaling, and background remo
 - Brainstorm new printable products, planner concepts, book outlines, greeting cards, and KDP cover copy.
 - Create Pinterest pin copy, Instagram/Facebook ad variants, and short promotional copy.
 - Upscale product artwork or remove backgrounds for cleaner listing images.
+
+## Security & Privacy
+
+- Do not commit EverAlice API keys to GitHub.
+- Use environment variables or your MCP client's secret storage for bearer tokens.
+- The MCP server requires authenticated requests with an EverAlice API key.
+- Signed ZIP and mockup URLs are intended for generated delivery assets and should be treated as private download links.
+- This repository contains setup docs and public endpoint metadata only; it does not contain the hosted server source code or any user secrets.
+
+## Registry Notes
+
+This repository is intended to give MCP directories and tooling a stable public URL for the hosted EverAlice Studio MCP server. The server is hosted by EverAlice Studio and is accessed over streamable HTTP with bearer-token authentication.
+
+Suggested GitHub topics:
+
+```text
+mcp, mcp-server, etsy, etsy-seller-tools, ai-tools, digital-products, print-on-demand, kdp, n8n, ecommerce, product-listings, mockups
+```
 
 ## Related Keywords
 
