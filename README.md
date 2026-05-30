@@ -36,7 +36,16 @@ Protocol: MCP `2025-06-18`
 
 ## Setup
 
-Create an EverAlice API key from your EverAlice Studio account, then configure your MCP client with bearer-token authentication.
+Create an EverAlice Studio account, generate an API key, then configure your MCP client with bearer-token authentication.
+
+### Create an EverAlice Account
+
+1. Sign up at [everalice.studio](https://everalice.studio).
+2. Open [EverAlice Studio settings](https://everalice.studio/settings).
+3. Create or copy your MCP/API access key.
+4. Store the key in your MCP client configuration or in an environment variable such as `EVERALICE_MCP_API_KEY`.
+
+EverAlice offers a free Starter plan with limited AI usage and paid plans with monthly AI credits. Credit packs are also available for additional usage.
 
 ### Claude Desktop
 
