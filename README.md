@@ -18,6 +18,7 @@ Use EverAlice from Claude Desktop, Codex, ChatGPT-compatible MCP clients, n8n wo
 - Website: [everalice.studio](https://everalice.studio)
 - Developer docs: [everalice.studio/developers](https://everalice.studio/developers)
 - MCP manifest: [everalice.studio/.well-known/mcp.json](https://everalice.studio/.well-known/mcp.json)
+- MCP Registry metadata: [`server.json`](server.json)
 - Account settings and API keys: [everalice.studio/settings](https://everalice.studio/settings)
 
 ## What Is EverAlice Studio?
@@ -173,6 +174,13 @@ For standalone image generation, mockup concepts, upscaling, and background remo
 ## Registry Notes
 
 This repository is intended to give MCP directories and tooling a stable public URL for the hosted EverAlice Studio MCP server. The server is hosted by EverAlice Studio and is accessed over streamable HTTP with bearer-token authentication.
+
+For the official MCP Registry, this repo includes [`server.json`](server.json) using the registry's remote server format:
+
+- `remotes[0].type`: `streamable-http`
+- `remotes[0].url`: EverAlice Studio hosted MCP endpoint
+- `Authorization` header configured as a required secret bearer token
+- GitHub namespace: `io.github.Pixel-Aly/EverAlice-AI-MCP`
 
 Suggested GitHub topics:
 

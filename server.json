@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Pixel-Aly/EverAlice-AI-MCP",
+  "title": "EverAlice Studio",
+  "description": "AI Etsy listing, mockup, ZIP pack, and digital product tools.",
+  "version": "1.0.0",
+  "websiteUrl": "https://everalice.studio/developers",
+  "repository": {
+    "url": "https://github.com/Pixel-Aly/EverAlice-AI-MCP",
+    "source": "github",
+    "id": "1254056234"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://kfdadgtwmcmgehstagbe.supabase.co/functions/v1/mcp-server",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "EverAlice API bearer token. Create a key at https://everalice.studio/settings.",
+          "isRequired": true,
+          "isSecret": true,
+          "value": "Bearer {EVERALICE_API_KEY}",
+          "variables": {
+            "EVERALICE_API_KEY": {
+              "description": "Your EverAlice MCP/API key.",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "ea_live_..."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
